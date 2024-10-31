@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sprites"><symbol viewBox="0 0 16 16" id="breadcrumbs-divider-icon" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.301 2.961a.5.5 0 0 1 .708 0l4.687 4.688a.5.5 0 0 1 0 .707L6.01 13.044a.5.5 0 1 1-.708-.708l4.334-4.334-4.334-4.334a.5.5 0 0 1 0-.707Z" fill-opacity=".7"/></symbol><symbol viewBox="0 0 14 14" id="dropdown-icon" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.72 4.575a.5.5 0 0 1 .705-.055L7 8.441l4.575-3.92a.5.5 0 1 1 .65.759l-4.9 4.2a.5.5 0 0 1-.65 0l-4.9-4.2a.5.5 0 0 1-.055-.705Z"/></symbol><symbol viewBox="0 0 32 32" id="dzen-icon" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#ca)"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.676.003c-.075 6.58-.506 10.264-2.958 12.715-2.451 2.452-6.134 2.883-12.715 2.958C.173 7.096 7.097.174 15.676.003Zm16.32 15.67c-6.387-.087-9.994-.542-12.407-2.955-2.45-2.45-2.881-6.13-2.957-12.706 8.435.328 15.194 7.186 15.365 15.66Zm-15.36 16.315c.086-6.383.541-9.987 2.953-12.399 2.412-2.412 6.016-2.867 12.399-2.953-.326 8.33-7.021 15.026-15.352 15.352Zm-.964.009C7.198 31.827.34 25.067.012 16.632c6.575.076 10.256.507 12.706 2.957 2.413 2.413 2.868 6.02 2.954 12.408Z"/></g><defs><clipPath id="ca"><path d="M0 0h32v32H0z"/></clipPath></defs></symbol><symbol viewBox="0 0 25 24" id="subscribe-icon" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 13h6v-2h-6V1.846a.5.5 0 0 1 .741-.438l18.462 10.154a.5.5 0 0 1 0 .876L4.241 22.592a.5.5 0 0 1-.741-.438V13Z"/></symbol><symbol viewBox="0 0 32 32" id="telegram-icon" xmlns="http://www.w3.org/2000/svg"><path d="m8.283 15.77 3.686 1.394 1.427 4.65c.092.299.451.409.69.21l2.055-1.697a.607.607 0 0 1 .747-.021l3.707 2.727a.433.433 0 0 0 .68-.266L23.991 9.53a.437.437 0 0 0-.582-.5l-15.13 5.914a.443.443 0 0 0 .004.824Zm4.883.652 7.206-4.498c.13-.08.262.097.151.202l-5.946 5.601a1.255 1.255 0 0 0-.382.748l-.203 1.521c-.027.203-.308.223-.364.027l-.779-2.774a.74.74 0 0 1 .317-.827Z"/></symbol><symbol viewBox="0 0 32 32" id="twitter-icon" xmlns="http://www.w3.org/2000/svg"><path d="M24.47 10.713a6.987 6.987 0 0 1-2.002.549 3.497 3.497 0 0 0 1.534-1.929 6.966 6.966 0 0 1-2.213.846 3.485 3.485 0 0 0-5.939 3.178 9.894 9.894 0 0 1-7.183-3.641 3.485 3.485 0 0 0 1.078 4.653 3.473 3.473 0 0 1-1.578-.436v.044a3.488 3.488 0 0 0 2.796 3.417c-.514.14-1.053.16-1.575.06a3.487 3.487 0 0 0 3.255 2.42 6.994 6.994 0 0 1-5.159 1.444 9.858 9.858 0 0 0 5.342 1.567c6.41 0 9.917-5.31 9.917-9.917 0-.15-.005-.301-.011-.45a7.08 7.08 0 0 0 1.739-1.804Z"/></symbol><symbol viewBox="0 0 32 32" id="vk-icon" xmlns="http://www.w3.org/2000/svg"><path d="M25.822 20.541c-.054-.093-.386-.841-1.987-2.38-1.675-1.61-1.45-1.349.568-4.133 1.229-1.696 1.72-2.732 1.566-3.175-.146-.422-1.05-.31-1.05-.31l-3.005.018s-.223-.031-.389.07c-.161.102-.265.335-.265.335s-.476 1.313-1.111 2.429c-1.339 2.355-1.875 2.479-2.094 2.333-.509-.34-.381-1.37-.381-2.1 0-2.283.333-3.234-.652-3.48-.327-.082-.567-.136-1.403-.145-1.073-.012-1.982.004-2.496.264-.342.173-.606.56-.445.582.199.028.65.126.888.463.309.433.297 1.41.297 1.41s.178 2.686-.413 3.02c-.407.229-.963-.238-2.157-2.376-.611-1.094-1.074-2.304-1.074-2.304s-.088-.226-.247-.346a1.222 1.222 0 0 0-.463-.193l-2.857.018s-.43.013-.587.206c-.14.172-.011.527-.011.527s2.238 5.42 4.77 8.154c2.324 2.505 4.962 2.34 4.962 2.34h1.195s.361-.041.545-.247c.17-.189.164-.544.164-.544s-.024-1.66.721-1.905c.734-.241 1.677 1.605 2.675 2.316.755.537 1.33.42 1.33.42l2.67-.04s1.398-.089.736-1.227Z"/></symbol></svg>
+    <div class="wrapper">
+        <header class="lock-padding">
+    <div class="container">
+        <div class="header__logotype">
+            <picture>
+                <img src="assets/images/header-logotype.svg" alt="Логотип">
+            </picture>
+            <a href="index.html" class="absolute-link"></a>
+        </div>
+        <div class="header__burger-menu">
+            <nav class="header__burger-menu__nav">
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Тарифы</a></li>
+                    <li><a href="#">Для бизнеса</a></li>
+                    <li><a href="#">Психологам</a></li>
+                    <li><a href="#">Сертификат</a></li>
+                    <li>
+                        <div class="header__burger-menu__dropdown">
+                            <div class="header__burger-menu__dropdown__button">
+                                <span>Материалы</span>
+                                <svg>
+                                    <use xlink:href="#dropdown-icon"></use>
+                                </svg>
+                            </div>
+                            <div class="header__burger-menu__dropdown__content-wrapper">
+                                <nav class="header__burger-menu__dropdown__content">
+                                    <ul>
+                                        <li><a href="#">О нас</a></li>
+                                        <li><a href="#">Тарифы</a></li>
+                                        <li><a href="#">Для бизнеса</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="main-button main-button_light">Подобрать психолога</a>
+        </div>
+        <div class="header__burger-menu__button">
+            <div class="header__burger-menu__button__content">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
+        <main>
+            <nav class="breadcrumbs">
+                <div class="breadcrumbs__content">
+                    <div class="breadcrumbs__item">
+                        <a href="#">Главная</a>
+                    </div>
+                    <div class="breadcrumbs__item breadcrumbs__item_divider">
+                        <svg>
+                            <use xlink:href="#breadcrumbs-divider-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="breadcrumbs__item breadcrumbs__item_current">
+                        <a href="#">Блог</a>
+                    </div>
+                </div>
+            </nav>
+            <section class="blog-section">
+                <picture class="blog-figure">
+                    <img src="assets/images/blog-figure-1.svg" alt="Картинка">
+                </picture>
+                <div class="container">
+                    <h1>Блог</h1>
+                    <div class="blog-section__tags">
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <picture>
+                                    <source srcset="assets/images/emoji-1.avif" type="image/avif">
+                                    <source srcset="assets/images/emoji-1.webp" type="image/webp">
+                                    <img src="assets/images/emoji-1.png" alt="Картинка">
+                                </picture>
+                                <span>Все</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Самооценка и самопринятие</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <picture>
+                                    <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                    <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                    <img src="assets/images/emoji-2.png" alt="Картинка">
+                                </picture>
+                                <span>Self</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Чувства и эмоции</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Тревога</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Упражнения</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Психология питания</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Насилие</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                        <div class="blog-section__tags__tag">
+                            <div class="blog-section__tags__tag__content">
+                                <span>Личное здоровье</span>
+                                <a href="#" class="absolute-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="articles">
+                        <div class="articles__container">
+                            <div class="articles-list">
+                                <div class="articles-list__item articles-list__item_large">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Самооценка и самопринятие</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-1.avif" type="image/avif">
+                                            <source srcset="assets/images/article-1.webp" type="image/webp">
+                                            <img src="assets/images/article-1.png" alt="Картинка" width="672" height="404">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Эмоциональное выгорание – стадии и симптомы, методы восстановления и профилактики</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Лиза Файнтух</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Изначально термин «эмоциональное профессиональной сфере и относился...
+                                        </p>
+                                        <time datetime="2021-08-21">21.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item articles-list__item_large">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-2.avif" type="image/avif">
+                                            <source srcset="assets/images/article-2.webp" type="image/webp">
+                                            <img src="assets/images/article-2.png" alt="Картинка" width="672" height="404">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Как не утонуть в тревоге и управлять своими страхами</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Лиза Файнтух</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Один из самых важных навыков, которые может дать работа с психотерапевтом - умение в разных ситуациях по-разному обходиться ...
+                                        </p>
+                                        <time datetime="2021-08-11">11.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Самооценка и самопринятие</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Психология питания</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-3.avif" type="image/avif">
+                                            <source srcset="assets/images/article-3.webp" type="image/webp">
+                                            <img src="assets/images/article-3.png" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Эмоциональное выгорание – стадии и симптомы, методы восстановления и профилактики</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Лиза Файнтух</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Изначально термин «эмоциональное профессиональной сфере и относился...
+                                        </p>
+                                        <time datetime="2021-08-21">21.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-4.avif" type="image/avif">
+                                            <source srcset="assets/images/article-4.webp" type="image/webp">
+                                            <img src="assets/images/article-4.png" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Как не утонуть в тревоге и управлять своими страхами</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Екатерина Бельтюкова</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Один из самых важных навыков, которые может дать работа с психотерапевтом - умение в разных ситуациях по-разному обходиться ...
+                                        </p>
+                                        <time datetime="2021-08-11">11.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-5.avif" type="image/avif">
+                                            <source srcset="assets/images/article-5.webp" type="image/webp">
+                                            <img src="assets/images/article-5.png" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Как управлять своими эмоциями:
+                                            8 шагов</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Екатерина Бельтюкова</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Клиенты часто спрашивают, как КОНТРОЛИРОВАТЬ свои негативные эмоции. Пришло время об этом написать!
+                                        </p>
+                                        <time datetime="2021-08-07">07.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-6.avif" type="image/avif">
+                                            <source srcset="assets/images/article-6.webp" type="image/webp">
+                                            <img src="assets/images/article-6.png" loading="lazy" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Эмоциональное выгорание – стадии и симптомы, методы восстановления и профилактики</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Лиза Файнтух под редакцией Екатерины Бельтюковой</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Изначально термин «эмоциональное я...
+                                        </p>
+                                        <time datetime="2021-08-21">21.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-7.avif" type="image/avif">
+                                            <source srcset="assets/images/article-7.webp" type="image/webp">
+                                            <img src="assets/images/article-7.png" loading="lazy" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Как не утонуть в тревоге и управлять своими страхами</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Екатерина Бельтюкова</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Один из самых важных навыков, которые может дать работа с психотерапевтом - умение в разных ситуациях по-разному обходиться ...
+                                        </p>
+                                        <time datetime="2021-08-11">11.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                                <div class="articles-list__item">
+                                    <div class="articles-list__item__image-content">
+                                        <div class="articles-list__item__tags">
+                                            <div class="articles-list__item__tags__tag">
+                                                <div class="articles-list__item__tags__tag__content">
+                                                    <picture>
+                                                        <source srcset="assets/images/emoji-2.avif" type="image/avif">
+                                                        <source srcset="assets/images/emoji-2.webp" type="image/webp">
+                                                        <img src="assets/images/emoji-2.png" alt="Картинка">
+                                                    </picture>
+                                                    <span>Self</span>
+                                                    <a href="#" class="absolute-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <picture class="articles-list__item__picture">
+                                            <source srcset="assets/images/article-8.avif" type="image/avif">
+                                            <source srcset="assets/images/article-8.webp" type="image/webp">
+                                            <img src="assets/images/article-8.png" loading="lazy" alt="Картинка" width="324" height="206">
+                                        </picture>
+                                    </div>
+                                    <div class="articles-list__item__text-content">
+                                        <h3>Как управлять своими эмоциями:
+                                            8 шагов</h3>
+                                        <p class="articles-list__item__author">
+                                            Автор: <cite>Екатерина Бельтюкова</cite>
+                                        </p>
+                                        <p class="articles-list__item__description">
+                                            Клиенты часто спрашивают, как КОНТРОЛИРОВАТЬ свои негативные эмоции. Пришло время об этом написать!
+                                        </p>
+                                        <time datetime="2021-08-07">07.08.2021</time>
+                                    </div>
+                                    <a href="article.html" class="absolute-link"></a>
+                                </div>
+                            </div>
+                            <a href="#" class="main-button main-button_load-more">Ещё</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+    <div class="container">
+        <div class="footer__items">
+            <nav class="footer__items__item">
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Тарифы</a></li>
+                    <li><a href="#">Для бизнеса</a></li>
+                    <li><a href="#">Психологам</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+            <nav class="footer__items__item">
+                <ul>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Вебинары</a></li>
+                    <li><a href="#">Подскаст</a></li>
+                    <li><a href="#">Сертификат</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="footer__items__item footer__items__item_form">
+                <form action="#" class="subscribe-form">
+                    <h3>Одно письмо в неделю со свежими новостями и акциями</h3>
+                    <div class="form__input-container">
+                        <input type="email" name="subscribe-email" id="subscribe-form-email" placeholder="Ваш e-mail" required>
+                        <button type="submit">
+                            <svg>
+                                <use xlink:href="#subscribe-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="subscribe-form__description">
+                        Подписываясь, я соглашаюсь на обработку персональных данных в соответствии с 
+                        ФЗ РФ № 152-ФЗ «О персональных данных», а также с Политикой конфиденциальности
+                    </p>
+                </form>
+            </div>
+            <div class="footer__items__item footer__items__item_logotype-social">
+                <div class="footer__logotype">
+                    <picture>
+                        <img src="assets/images/footer-logotype.svg" alt="Логотип">
+                    </picture>
+                    <a href="index.html" class="absolute-link"></a>
+                </div>
+                <ul class="social-links">
+                    <li>
+                        <a href="#" class="social-links__link">
+                            <svg>
+                                <use xlink:href="#vk-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-links__link">
+                            <svg>
+                                <use xlink:href="#telegram-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-links__link">
+                            <svg>
+                                <use xlink:href="#twitter-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-links__link">
+                            <svg>
+                                <use xlink:href="#dzen-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__items__item footer__items__item_bottom">
+                <div class="footer__items__item__content">
+                    <span class="footer__copyright">©Youtalk, 2018 – 2022</span>
+                    <a href="#" class="footer__link">Юридические документы</a>
+                    <a href="#" class="footer__link">Способы оплаты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
